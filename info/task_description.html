@@ -1,44 +1,51 @@
 <p>
-    <i>( Describe task in general )</i>
+    Blacksmith gave his apprentice a task to make many rings. The apprentice is not skilled yet and as result
+    some (many) rings are connected. But we need separated rings and now we should decide how we can break some rings
+    to free the maximum rings as it possible.
 </p>
 
 <p>
-    Sum two passed ints
+    All rings are numbered and you are given an information which rings are connected.
+    The information is given as a sequence of sets. Each sets describe connected rings.
+    For example {1, 2} means that 1st and 2nd rings are connected and {1, 2, 4, 5} that
+    all these rings connected each other (1-2, 1,4, 1-5, 2-4, 2-5, 4-5).
+    You should count how many rings we should break to get the maximum of separated rings.
+    All rings are numbered from 1 to N, where N is quantity of rings.
 </p>
 
 <p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
+    <img class="for_info_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"/>
+    <img class="for_editor_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings" width="380px"/>
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    In the image you can see the next connections: ({1,2},{2,3},{3,4},{4,5,6}). And the best way is
+    to break 3 rings -- 3 rings will be full and separated. So the result is 3.
+</p>
+<p>
+    <strong>Input: </strong> an information about ring connections as a tuple of sets with integer.
+</p>
+
+<p>
+    <strong>Output: </strong> How many rings we should break for the best result as an integer.
 </p>
 
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
-    <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
-    </pre>
+    <textarea data-code="python">break(({1, 2}, {2, 3}, {3, 4}, {4, 5, 6})) == 3</textarea>
 </div>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
+    This model can show how "strong" your network or roads between cities.
 </p>
 
 <p>
     <strong>Precondition:</strong>
-    <i>Constraints for Input</i>
+    all(2 &le; len(s) for s in rings)<br>
+    sorted(reduce(set.union, rings)) == list(range(1, max(reduce(set.union, rings)<br>
 </p>
