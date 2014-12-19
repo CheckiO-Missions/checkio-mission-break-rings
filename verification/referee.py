@@ -34,14 +34,20 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
+
+cover = """def cover(func, data):
+    return func(tuple(set(el) for el in data))
+"""
+
 api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
         cover_code={
-            'python-27': cover_codes.unwrap_args,  # or None
-            'python-3': cover_codes.unwrap_args
+            'python-27': cover,
+            'python-3': cover
         },
+        function_name="break_rings",
         # checker=None,  # checkers.float.comparison(2)
         # add_allowed_modules=[],
         # add_close_builtins=[],

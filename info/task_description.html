@@ -7,8 +7,7 @@
 <p>
     All rings are numbered and you are given an information which rings are connected.
     The information is given as a sequence of sets. Each sets describe connected rings.
-    For example {1, 2} means that 1st and 2nd rings are connected and {1, 2, 4, 5} that
-    all these rings connected each other (1-2, 1,4, 1-5, 2-4, 2-5, 4-5).
+    For example {1, 2} means that 1st and 2nd rings are connected.
     You should count how many rings we should break to get the maximum of separated rings.
     All rings are numbered from 1 to N, where N is quantity of rings.
 </p>
@@ -19,11 +18,11 @@
 </p>
 
 <p>
-    In the image you can see the next connections: ({1,2},{2,3},{3,4},{4,5,6}). And the best way is
-    to break 3 rings -- 3 rings will be full and separated. So the result is 3.
+    In the image you can see the next connections: ({1,2},{2,3},{3,4},{4,5},{4,6},{6,5}).
+    And the best way is to break 3 rings -- 3 rings will be full and separated. So the result is 3.
 </p>
 <p>
-    <strong>Input: </strong> an information about ring connections as a tuple of sets with integer.
+    <strong>Input: </strong> An information about ring connections as a tuple of sets with integer.
 </p>
 
 <p>
@@ -36,7 +35,7 @@
     <p>
         <strong>Example:</strong>
     </p>
-    <textarea data-code="python">break(({1, 2}, {2, 3}, {3, 4}, {4, 5, 6})) == 3</textarea>
+    <textarea data-code="python">break_rings(({1, 2}, {2, 3}, {3, 4}, {4, 5, 6})) == 3</textarea>
 </div>
 
 <p class="for_info_only">
@@ -46,6 +45,6 @@
 
 <p>
     <strong>Precondition:</strong>
-    all(2 &le; len(s) for s in rings)<br>
-    sorted(reduce(set.union, rings)) == list(range(1, max(reduce(set.union, rings)<br>
+    all(len(s) == 2 for s in rings)<br>
+    sorted(reduce(set.union, rings)) == list(range(1, max(reduce(set.union, rings)) + 1))<br>
 </p>

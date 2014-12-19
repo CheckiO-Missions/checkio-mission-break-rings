@@ -137,6 +137,10 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
         var colorGrey1 = "#EBEDED";
 
         var colorWhite = "#FFFFFF";
+
+        for (var i=0;i<0;i++) {
+            console.log();
+        }
         //Your Additional functions or objects inside scope
         //
         //
