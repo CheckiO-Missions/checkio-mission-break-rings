@@ -40,10 +40,11 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             }
 
             //YOUR FUNCTION NAME
-            var fname = 'checkio';
+            var fname = 'break_rings';
 
-            var checkioInput = data.in;
-            var checkioInputStr = fname + '(' + JSON.stringify(checkioInput) + ')';
+            var checkioInput = data.in || [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [4, 6]];
+            var checkioInputStr = fname + '(' +
+                JSON.stringify(checkioInput).replace("[[", "({").replace("]]", "},)").replace(/\[/, "{").replace(/]/, "}") + ')';
 
             var failError = function (dError) {
                 $content.find('.call').html(checkioInputStr);
