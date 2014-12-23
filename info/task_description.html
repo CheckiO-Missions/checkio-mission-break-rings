@@ -1,34 +1,36 @@
-<p>     
-    Blacksmith gave his apprentice a task to make many rings. The apprentice is not skilled yet
-    and as result     some (many) rings are connected. But we need separated rings and now we should
-    decide how we can break some rings     to free the maximum rings as it possible. 
+<p>
+    A blacksmith gave his apprentice a task, ordering them to make a selection of rings. The apprentice is not yet
+    skilled in the craft and as a result of this, some (to be honest, most) of rings came out connected together. Now
+    he’s asking for your help separating the rings and deciding how to break enough rings to free so as to get the
+    maximum number of rings possible.
+
 </p>
 
 <p>
-    All rings are numbered and you are given an information which rings are connected.
-    The information is given as a sequence of sets. Each sets describe connected rings.
-    For example {1, 2} means that 1st and 2nd rings are connected.
-    You should count how many rings we should break to get the maximum of separated rings.
-    All rings are numbered from 1 to N, where N is quantity of rings.
+    All of the rings are numbered and you are told which of the rings are connected. This information is given as a
+    sequence of sets. Each set describes the connected rings. For example: {1, 2} means that the 1st and 2nd rings are
+    connected. You should count how many rings we need to break to get the maximum of separate rings. Each of the rings
+    are numbered in a range from 1 to N, where N is total quantity of rings.
 </p>
 
 <p style="text-align: center;">
     <img class="for_info_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"/>
-    <img class="for_editor_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings" width="380px"/>
+    <img class="for_editor_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"
+         width="380px"/>
 </p>
 
 <p>
-    In the image you can see the next connections: ({1,2},{2,3},{3,4},{4,5},{4,6},{6,5}).
-    And the best way is to break 3 rings -- 3 rings will be full and separated. So the result is 3.
+    In the above image you can see the connections: ({1,2},{2,3},{3,4},{4,5},{4,6},{6,5}). The optimal solution here
+    would be to break 3 rings, making 3 full and separate rings. So the result is 3.
 </p>
 <p>
-    <strong>Input: </strong> An information about ring connections as a tuple of sets with integer.
+    <strong>Input: </strong> Information about the connected rings as a tuple of sets with integers.
+
 </p>
 
 <p>
-    <strong>Output: </strong> How many rings we should break for the best result as an integer.
+    <strong>Output: </strong> The number of rings to break as an integer.
 </p>
-
 
 
 <div class="for_info_only">
@@ -40,7 +42,8 @@
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    This model can show how "strong" your network or roads between cities.
+    This model specializes in optimizing something with specific conditions. Using the basic concepts, you could create
+    a model for improving a transportation grid.
 </p>
 
 <p>
