@@ -1,0 +1,68 @@
+<p>
+  鍛冶屋が彼のいとこにリングを整理するために選択しろという仕事を与えた。
+  いとこはまだその仕事のスキルがなく、結果としていくつかの(正直にいうとほとんどの)リングが一緒につながってしまった。
+  彼はリングを切り離しなるべく多くの数のリングを残そうとあなたに助けを求めている。
+
+    <!-- A blacksmith gave his apprentice a task, ordering them to make a selection of rings. The apprentice is not yet
+    skilled in the craft and as a result of this, some (to be honest, most) of rings came out connected together. Now
+    he’s asking for your help separating the rings and deciding how to break enough rings to free so as to get the
+    maximum number of rings possible. -->
+
+</p>
+
+<p>
+  すべてのリングには番号が振られていて、あなたはどのリングが繋がっているか知らされている。
+  この情報はsetの情報として与えられる。それぞれのsetは繋がっているリングを記述している。例えば、{1, 2}は1番目と2番目のリングが繋がっているという意味である。
+  あなたはもっとも多くの切り離されたリングを得るために、いくつリングを壊さなければいけないか数えなければいけない。
+  それぞれのリングは1からNまでの範囲の数字で番号が付けられており、Nはリングの数である。
+
+    <!-- All of the rings are numbered and you are told which of the rings are connected. This information is given as a
+    sequence of sets. Each set describes the connected rings. For example: {1, 2} means that the 1st and 2nd rings are
+    connected. You should count how many rings we need to break to get the maximum of separate rings. Each of the rings
+    are numbered in a range from 1 to N, where N is total quantity of rings. -->
+</p>
+
+<p style="text-align: center;">
+    <img class="for_info_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"/>
+    <img class="for_editor_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"
+         width="380px"/>
+</p>
+
+<p>
+  上の画像では次の繋がりがわかる({1,2},{2,3},{3,4},{4,5},{4,6},{6,5})
+  ここでの最適な解決法は3つのリングを壊し、3つの完全に切り離されたリングを得ることである。
+  従って結果は3となる。
+
+    <!-- In the above image you can see the connections: ({1,2},{2,3},{3,4},{4,5},{4,6},{6,5}). The optimal solution here
+    would be to break 3 rings, making 3 full and separate rings. So the result is 3. -->
+</p>
+<p>
+    <strong>入力 </strong> 整数のセットのタプルとして与えられる繋がったリングの情報
+</p>
+
+<p>
+    <strong>出力</strong> 壊すべきリングの数の整数
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>例</strong>
+    </p>
+    <textarea data-code="python">break_rings(({1, 2}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 5})) == 3</textarea>
+</div>
+
+<p class="for_info_only">
+  <strong>どうやって使われるか </strong>
+  このモデルは特定の状態の何かを最適化することに特化している。その基本的なコンセプトを使って、輸送網を改善するモデルを作ることができるかもしれない。
+
+    <!-- <strong>How it is used: </strong>
+    This model specializes in optimizing something with specific conditions. Using the basic concepts, you could create
+    a model for improving a transportation grid. -->
+</p>
+
+<p>
+    <strong>事前条件</strong>
+    all(len(s) == 2 for s in rings)<br>
+    sorted(reduce(set.union, rings)) == list(range(1, max(reduce(set.union, rings)) + 1))<br>
+</p>
