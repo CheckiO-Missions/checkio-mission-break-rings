@@ -1,0 +1,20 @@
+<p>Un herrero le asigna una tarea a su aprendiz que consiste en hacer una selecci&oacute;n de anillos (aros). El aprendiz no es a&uacute;n experto en este arte y como resultado, algunos (para ser honesto, la mayor&iacute;a) de los anillos terminan conectados entre s&iacute;. Ahora &eacute;l est&aacute; pidiendo tu ayuda separar los anillos y b&aacute;sicamente, para decidir c&oacute;mo romper suficientes anillos para liberar el m&aacute;ximo n&uacute;mero de anillos posibles.</p>
+
+<p>Todos los anillos est&aacute;n numerados y se te informar&aacute; cuales est&aacute;n conectados. Esta informaci&oacute;n se provee como una secuencia de sets, donde cada set describe los anillos conectados. Por ejemplo: {1, 2} significa que el primero y segundo anillos est&aacute;n conectados. Deber&aacute;s contar cu&aacute;ntos anillos deber&aacute;n romperse para conseguir el m&aacute;ximo n&uacute;mero de anillos separados. Los anillos est&aacute;n numerados desde 1 hasta N, donde N es la cantidad total de los anillos.</p>
+
+<p style="text-align: center;"><img alt="example-rings" class="for_info_only" src="{{MEDIA}}example-rings.svg" title="example-rings" /> <img alt="example-rings" class="for_editor_only" src="{{MEDIA}}example-rings.svg" title="example-rings" width="380px" /></p>
+
+<p>En la imagen de arriba puedes ver las conexiones: ({1,2}, {2,3}, {3,4}, {4,5}, {4,6}, {6,5}). La mejor soluci&oacute;n en este caso ser&iacute;a romper 3 anillos, obteniendo as&iacute; 3 anillos completos y separados. Para este ejemplo, el resultado es 3.</p>
+
+<p><strong>Datos de Entrada: </strong> Informaci&oacute;n sobre los anillos conectados, como una tupla de sets con enteros (<em>int</em>).</p>
+
+<p><strong>Salida: </strong> El n&uacute;mero de anillos a romper, como un entero (<em>int</em>).</p>
+
+<div class="for_info_only">
+<p><strong>Ejemplo:</strong></p>
+<textarea data-code="python">break_rings(({1, 2}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 5})) == 3</textarea></div>
+
+<p class="for_info_only"><strong>&iquest;C&oacute;mo se usa?:</strong> Este modelo se especializa en la optimizaci&oacute;n con condiciones espec&iacute;ficas. Usando estos conceptos b&aacute;sicos, podr&iacute;as crear un modelo para mejorar una red de transporte.</p>
+
+<p><strong>Condiciones:</strong> all(len(s) == 2 for s in rings)<br />
+sorted(reduce(set.union, rings)) == list(range(1, max(reduce(set.union, rings)) + 1))</p>
