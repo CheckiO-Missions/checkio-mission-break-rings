@@ -1,0 +1,38 @@
+<p>Un forgeron a demandé à son apprenti de classer des anneaux. 
+Cet apprenti n'est pas très habile, et voilà que certains anneaux 
+sont imbriqués. Il sollicite à présent votre aide pour séparer 
+les anneaux : il s'agit de décider quels anneaux briser pour libérer
+le plus grand nombre d'anneaux.   
+
+</p>
+
+<p>Les anneaux sont numérotés de 1 à N (N est le nombre total d'anneaux) 
+et on vous dit lesquels sont imbriqués. 
+Cette information est donnée sous la forme d'un tuple d'ensembles. 
+Chaque ensemble décrit les anneaux imbriqués ensemble.
+Par exemple : {1, 2} signifie que l'anneau 1 et l'anneau 2 sont imbriqués.
+Il faut compter le nombre d'anneaux qu'il faut briser pour obtenir le plus grand
+nombre d'anneaux libérés.</p>
+
+<p style="text-align: center;"><img alt="example-rings" class="for_info_only" src="{{MEDIA}}example-rings.svg" title="example-rings" /> <img alt="example-rings" class="for_editor_only" src="{{MEDIA}}example-rings.svg" title="example-rings" width="380px" /></p>
+
+<p>Dans l'image ci-dessus,  on peut voir les connections : 
+({1,2}, {2,3}, {3,4}, {4,5}, {4,6}, {6,5}). La meilleure solution est de briser 3 anneaux,
+ce qui libère 3 anneaux. La réponse est 3.
+
+</p>
+
+<p><strong>Input: </strong> Informations sur les anneaux imbriqués, sous forme
+de tuple d'ensembles d'entiers (int).</p>
+
+<p><strong>Output: </strong> Le nombre d'anneaux à briser (int).</p>
+
+<div class="for_info_only">
+<p><strong>Exemple:</strong></p>
+<textarea data-code="python">break_rings(({1, 2}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 5})) == 3</textarea></div>
+
+<p class="for_info_only"><strong>Utilisation:</strong>
+Il s'agit d'opitimisation sous contraintes. On peut créer, en utilisant ces concepts de base, un modèle pour améliorer une grille de transport.</p>
+
+<p><strong>Préconditions:</strong> all(len(s) == 2 for s in rings)<br />
+sorted(reduce(set.union, rings)) == list(range(1, max(reduce(set.union, rings)) + 1))</p>
