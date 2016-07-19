@@ -23,13 +23,11 @@
 </p>
 
 <p style="text-align: center;">
-    <img class="for_info_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"/>
-    <img class="for_editor_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"
-         width="380px"/>
+    <img class="for_info_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings" style="max-height: 200px" />
 </p>
 
 <p>
-  上の画像では次の繋がりがわかる({1,2},{2,3},{3,4},{4,5},{4,6},{6,5})
+  上の画像では次の繋がりがわかる[[1,2],[2,3],[3,4],[4,5],[4,6],[6,5]]
   ここでの最適な解決法は3つのリングを壊し、3つの完全に切り離されたリングを得ることである。
   従って結果は3となる。
 
@@ -49,7 +47,11 @@
     <p>
         <strong>例</strong>
     </p>
-    <textarea data-code="python">break_rings(({1, 2}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 5})) == 3</textarea>
+        <pre class="brush: python">{% if interpreter.slug == "js-node" %}
+break_rings([[1,2],[2,3],[3,4],[4,5],[4,6],[6,5]]) == 3
+{% else %}
+break_rings(({1, 2}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 5})) == 3
+{% endif %}</pre>
 </div>
 
 <p class="for_info_only">

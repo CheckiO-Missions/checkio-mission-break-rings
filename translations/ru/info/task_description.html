@@ -17,19 +17,22 @@
 </p>
 
 <p style="text-align: center;">
-    <img class="for_info_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"/>
-    <img class="for_editor_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings"
-         width="380px"/>
+    <img class="for_info_only" title="example-rings" src="{{MEDIA}}example-rings.svg" alt="example-rings" style="max-height: 200px" />
 </p>
 
 <p>
     На изображении выше вы можете видеть связи:
-    ({1,2},{2,3},{3,4},{4,5},{4,6},{6,5}). 
+    [[1,2],[2,3],[3,4],[4,5],[4,6],[6,5]]. 
     Оптимальным решением здесь разбить 3 кольца, 
     получив 3 целых и отдельных кольца. Таким образом ответ 3.
 </p>
 <p>
-    <strong>Входные данные: </strong> Информация о связанных кольцах в виде кортежа множеств с целыми числами.
+    
+    {% if interpreter.slug == "js-node" %}
+<strong>Входные данные: </strong> Информация о связанных кольцах в виде массива массивов с целыми числами.
+{% else %}
+<strong>Входные данные: </strong> Информация о связанных кольцах в виде кортежа множеств с целыми числами.
+{% endif %}
 </p>
 
 <p>
@@ -41,7 +44,11 @@
     <p>
         <strong>Примеры:</strong>
     </p>
-    <textarea data-code="python">break_rings(({1, 2}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 5})) == 3</textarea>
+        <pre class="brush: python">{% if interpreter.slug == "js-node" %}
+break_rings([[1,2],[2,3],[3,4],[4,5],[4,6],[6,5]]) == 3
+{% else %}
+break_rings(({1, 2}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 5})) == 3
+{% endif %}</pre>
 </div>
 
 <p class="for_info_only">
