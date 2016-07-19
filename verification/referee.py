@@ -47,7 +47,10 @@ api.add_listener(
             'python-27': cover,
             'python-3': cover
         },
-        function_name="break_rings",
+        function_name={
+            "python": "break_rings",
+            "js": "breakRings"
+        }
         # checker=None,  # checkers.float.comparison(2)
         # add_allowed_modules=[],
         # add_close_builtins=[],
