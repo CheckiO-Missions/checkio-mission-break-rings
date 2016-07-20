@@ -1,7 +1,7 @@
 "use strict";
 
-function breakRings(numbers){
-    return numbers
+function breakRings(rings){
+    return 1
 }
 
 var assert = require('assert');
